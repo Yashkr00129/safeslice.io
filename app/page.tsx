@@ -1,11 +1,20 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+"use client";
+import { Button } from "@mui/material";
 import { Layout as SidebarLayout } from "./components/dashboard/Layout";
+import axios from "axios";
 
 export default function Home() {
+	const getAccessToken = async () => {
+		const res = await axios.get("/api/google/get-oauth-token");
+		console.log(res.data);
+		try {
+		} catch (error) {
+			console.log(error);
+		}
+	};
 	return (
 		<SidebarLayout>
-			<h1>Hello</h1>
+			<Button onClick={getAccessToken}>Get Oauth Access Token</Button>
 		</SidebarLayout>
 	);
 }

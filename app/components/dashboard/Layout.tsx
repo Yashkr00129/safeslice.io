@@ -21,6 +21,7 @@ const LayoutContainer = styled("div")({
 	flex: "1 1 auto",
 	flexDirection: "column",
 	width: "100%",
+	minHeight: "70vh",
 });
 
 type Props = {
