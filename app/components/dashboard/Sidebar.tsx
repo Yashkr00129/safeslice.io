@@ -8,7 +8,6 @@ import {
 	Divider,
 	Drawer,
 	Stack,
-	SvgIcon,
 	Typography,
 	useMediaQuery,
 } from "@mui/material";
@@ -45,10 +44,14 @@ export const Sidebar = (props: PropTypes) => {
 					flexDirection: "column",
 					height: "100%",
 				}}>
-				<Box sx={{ p: 3 }}>
+				<Stack
+					sx={{ p: 3, textDecoration: "none",color:"white" }}
+					alignItems="center"
+					direction="row"
+					gap="1rem"
+					component={NextLink}
+					href="/">
 					<Box
-						component={NextLink}
-						href="/"
 						sx={{
 							display: "inline-flex",
 							height: 32,
@@ -56,36 +59,8 @@ export const Sidebar = (props: PropTypes) => {
 						}}>
 						<Logo />
 					</Box>
-					<Box
-						sx={{
-							alignItems: "center",
-							backgroundColor: "rgba(255, 255, 255, 0.04)",
-							borderRadius: 1,
-							cursor: "pointer",
-							display: "flex",
-							justifyContent: "space-between",
-							mt: 2,
-							p: "12px",
-						}}>
-						<div>
-							<Typography
-								color="inherit"
-								variant="subtitle1">
-								Devias
-							</Typography>
-							<Typography
-								color="neutral.400"
-								variant="body2">
-								Production
-							</Typography>
-						</div>
-						<SvgIcon
-							fontSize="small"
-							sx={{ color: "neutral.500" }}>
-							<ChevronUpDownIcon />
-						</SvgIcon>
-					</Box>
-				</Box>
+					<Typography variant="h5">Safeslice</Typography>
+				</Stack>
 				<Divider sx={{ borderColor: "neutral.700" }} />
 				<Box
 					component="nav"
@@ -165,3 +140,4 @@ export const Sidebar = (props: PropTypes) => {
 		</Drawer>
 	);
 };
+

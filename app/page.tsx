@@ -1,6 +1,6 @@
 "use client";
 import { Button } from "@mui/material";
-import { Layout as SidebarLayout } from "./components/dashboard/Layout";
+import { SidebarLayout as SidebarLayout } from "./components/dashboard/Layout";
 import axios from "axios";
 
 export default function Home() {

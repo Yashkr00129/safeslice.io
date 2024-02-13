@@ -8,6 +8,7 @@ import UserIcon from "@heroicons/react/24/solid/UserIcon";
 import UserPlusIcon from "@heroicons/react/24/solid/UserPlusIcon";
 import UsersIcon from "@heroicons/react/24/solid/UsersIcon";
 import XCircleIcon from "@heroicons/react/24/solid/XCircleIcon";
+import { ArrowUpTrayIcon } from "@heroicons/react/24/outline";
 
 type SidebarItem = {
 	title: string;
@@ -28,20 +29,20 @@ export const items: SidebarItem[] = [
 		),
 	},
 	{
-		title: "Customers",
-		path: "/customers",
+		title: "Uploads",
+		path: "/uploads",
 		icon: (
 			<SvgIcon fontSize="small">
-				<UsersIcon />
+				<ArrowUpTrayIcon />
 			</SvgIcon>
 		),
 	},
 	{
-		title: "Companies",
-		path: "/companies",
+		title: "Team",
+		path: "/team",
 		icon: (
 			<SvgIcon fontSize="small">
-				<ShoppingBagIcon />
+				<UsersIcon />
 			</SvgIcon>
 		),
 	},
@@ -60,33 +61,6 @@ export const items: SidebarItem[] = [
 		icon: (
 			<SvgIcon fontSize="small">
 				<CogIcon />
-			</SvgIcon>
-		),
-	},
-	{
-		title: "Login",
-		path: "/auth/login",
-		icon: (
-			<SvgIcon fontSize="small">
-				<LockClosedIcon />
-			</SvgIcon>
-		),
-	},
-	{
-		title: "Register",
-		path: "/auth/register",
-		icon: (
-			<SvgIcon fontSize="small">
-				<UserPlusIcon />
-			</SvgIcon>
-		),
-	},
-	{
-		title: "Error",
-		path: "/404",
-		icon: (
-			<SvgIcon fontSize="small">
-				<XCircleIcon />
 			</SvgIcon>
 		),
 	},

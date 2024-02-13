@@ -28,7 +28,7 @@ type Props = {
 	children: ReactElement;
 };
 
-export const Layout = (props: Props) => {
+export const SidebarLayout = (props: Props) => {
 	const { children } = props;
 	const pathname = usePathname();
 	const [openNav, setOpenNav] = useState(false);

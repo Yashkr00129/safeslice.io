@@ -35,4 +35,5 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-/bag-work.mp4
+bag-work.mp4
+Tasks.txt
