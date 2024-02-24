@@ -1,5 +1,5 @@
 "use client";
-import { ReactElement, useCallback, useEffect, useState } from "react";
+import { ReactNode, useCallback, useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import { styled } from "@mui/material/styles";
 import { Sidebar } from "./Sidebar";
@@ -22,10 +22,11 @@ const LayoutContainer = styled("div")({
 	flexDirection: "column",
 	width: "100%",
 	minHeight: "70vh",
+	padding: "1rem",
 });
 
 type Props = {
-	children: ReactElement;
+	children: ReactNode;
 };
 
 export const SidebarLayout = (props: Props) => {

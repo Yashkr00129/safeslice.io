@@ -14,24 +14,25 @@ import PlusIcon from "@heroicons/react/24/solid/PlusIcon";
 
 import axios from "axios";
 import { SearchBox } from "../components/SearchBox";
+import { useOrganization } from "@clerk/nextjs";
 
 const upload = [
 	{
-		user: {},
-		clips: ["https://someurl.com"],
-		finalVideo: ["https://someurl.com"],
+		name: "Project 1",
+		status: "Upload Pending",
+	},
+	{
+		name: "Project 2",
+		status: "Upload Pending",
+	},
+	{
+		name: "Project 3",
+		status: "Upload Completed",
 	},
 ];
 
 export default function Upload() {
-	const getAccessToken = async () => {
-		const res = await axios.get("/api/google/get-oauth-token");
-		console.log(res.data);
-		try {
-		} catch (error) {
-			console.log(error);
-		}
-	};
+	const { organization, } = useOrganization();
 
 	return (
 		<SidebarLayout>
@@ -42,30 +43,26 @@ export default function Upload() {
 					py: 8,
 				}}>
 				<Container maxWidth="xl">
-					<Stack
-						direction="row"
-						justifyContent="space-between"
-						spacing={4}>
-						<Stack spacing={1}>
+					<Stack spacing={3}>
+						<Stack
+							direction="row"
+							justifyContent="space-between"
+							spacing={4}>
 							<Typography variant="h4">Uploads</Typography>
-							<Stack
-								alignItems="center"
-								direction="row"
-								spacing={1}></Stack>
+							<div>
+								<Button
+									startIcon={
+										<SvgIcon fontSize="small">
+											<PlusIcon />
+										</SvgIcon>
+									}
+									variant="contained">
+									Add
+								</Button>
+							</div>
 						</Stack>
-						<div>
-							<Button
-								startIcon={
-									<SvgIcon fontSize="small">
-										<PlusIcon />
-									</SvgIcon>
-								}
-								variant="contained">
-								Add
-							</Button>
-						</div>
+						<SearchBox placeholder={"Search Uploads"} />
 					</Stack>
-					<SearchBox placeholder={"Search Uploads"} />
 				</Container>
 			</Box>
 		</SidebarLayout>
